@@ -9,7 +9,7 @@ My goal was to build a robust, stateful bot capable of synthesizing multi-layere
 I implemented a FastApi server to handle the strict 5-endpoint API contract (/v1/healthz, /v1/metadata, /v1/context, /v1/tick, /v1/reply). Contexts (Category, Merchant, Trigger, Customer) are ingested and stored in an in-memory dictionary contexts[(scope, context_id)] for rapid retrieval.
 
 
-2) Composition Engine (Google Gemini 2.5 Flash):-
+2) Composition Engine:-
 I selected the Groq API as the reasoning engine due to its lightning-fast inference speeds and generous free tier. The bot leverages llama-3.1-8b-instant for rapid generation and llama-3.3-70b-versatile for complex evaluation logic. The /v1/tick endpoint uses a strict system prompt to synthesize the 4 context layers and output validated JSON. To prevent markdown parsing crashes, I implemented a JSON cleaner that strips out markdown backticks.
 
 3) Rate-Limit Resilience (Smart Retry):-
