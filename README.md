@@ -37,24 +37,23 @@ Action Execution Limits: More detailed documentation on exactly how Vera current
 To run this bot locally for evaluation:
 
 1. Create & Activate Virtual Environment
-
 Bash
 python3 -m venv venv
 source venv/bin/activate
-2. Install Dependencies
 
+2. Install Dependencies
 Bash
 pip install fastapi uvicorn google-generativeai pydantic
-3. Set API Key
 
+4. Set API Key
 Bash
 export GEMINI_API_KEY="your_api_key_here"
-4. Start the Server
 
+6. Start the Server
 Bash
 uvicorn bot:app --host 0.0.0.0 --port 8080
+
 5. Expose for Grading (Optional)
 If testing via external webhook, use ngrok to expose the local server:
-
 Bash
 ngrok http 8080
